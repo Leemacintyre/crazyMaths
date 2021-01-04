@@ -1,7 +1,38 @@
 body {
 	font-size: 10px;
+	width: 100vw;
 	background-color: rgba(74, 153, 127, 0.788);
+	font-weight: 800;
 	margin: 0;
 	padding: 0;
 	border: 0;
+}
+
+@media only screen and (max-width: 600px) {
+	body {
+		font-size: 8px;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	body {
+		font-size: 7.5px;
+	}
+}
+
+@media only screen and (max-width: 450px) {
+	body {
+		font-size: 7px;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	body {
+		font-size: 5px;
+	}
+}
+@media only screen and (max-width: 300px) {
+	body {
+		font-size: 4.5px;
+	}
 }

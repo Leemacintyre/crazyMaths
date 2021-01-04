@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import styles from './calculation.style.module.scss';
+import styles from './division.style.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import {
 	randomNum1,
@@ -7,21 +7,21 @@ import {
 	isIncorrect,
 	counter,
 	inputValue,
-} from '../../actions';
-import DifficultyButtons from '../difficultyButtons/difficultyButtons';
+} from '../../../actions';
+import DifficultyButtons from '../../difficultyButtons/difficultyButtons';
 
-export const Calculation = () => {
+export const Division = () => {
 	const dispatch = useDispatch();
 	const num1 = useSelector((state) => state.randomNum1.num1);
 	const num2 = useSelector((state) => state.randomNum1.num2);
 	const difficultyLevel = useSelector((state) => state.difficulty);
 	const answerState = useSelector((state) => state.isCorrect);
-	const stateInputValue = useSelector((state) => state.inputValue);
 
+	const stateInputValue = useSelector((state) => state.inputValue);
+	const fraction = num1 * num2;
 	const checkAnswer = () => {
-		const total = num1 + num2;
+		const total = fraction / num2;
 		const strTotal = total.toString();
-		console.log(difficultyLevel);
 
 		if (stateInputValue === strTotal) {
 			dispatch(randomNum1(difficultyLevel));
@@ -40,12 +40,11 @@ export const Calculation = () => {
 	return (
 		<div className={styles.container}>
 			<div className={styles.equation}>
-				<p onClick={() => dispatch(randomNum1(difficultyLevel))}>{num1}</p>
-				<p>+</p>
+				<p onClick={() => dispatch(randomNum1(difficultyLevel))}>{fraction}</p>
+				<p> / </p>
 				<p>{num2}</p>
 			</div>
 			<DifficultyButtons />
-
 			<div className={styles.inputContainer}>
 				<p>{answerState ? 'Correct' : 'Incorrect'}</p>
 				<input

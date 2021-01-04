@@ -4,10 +4,17 @@
 
 	.titles {
 		width: 90vw;
+		height: 5vh;
 		margin: auto;
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 		font-size: 1.6em;
+
+		a {
+			color: black;
+			text-decoration: none;
+		}
 
 		:hover {
 			transition: all 0.1s;

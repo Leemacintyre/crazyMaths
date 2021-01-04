@@ -9,7 +9,10 @@ const DifficultyButtons = () => {
 	return (
 		<div className={styles.difficulty}>
 			<button
-				onClick={() => dispatch(difficulty(10))}
+				type='button'
+				onClick={() => {
+					dispatch(difficulty(10));
+				}}
 				className={styles.buttonEasy}>
 				Easy
 			</button>

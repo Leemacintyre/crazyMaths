@@ -1,10 +1,13 @@
 .difficulty {
-	//border: 1px solid black;
-	height: 40vh;
+	// border: 1px solid black;
+	//height: 10vh;
+	width: 80vw;
 	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	margin-right: 2%;
+
+	//flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	//margin-right: 2%;
 
 	.buttonEasy {
 		text-decoration: none;

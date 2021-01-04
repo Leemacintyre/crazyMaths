@@ -14,7 +14,7 @@ const store = createStore(rootReducers);
 ReactDOM.render(
 	<Provider store={store}>
 		<React.StrictMode>
-			<App />
+			<App style={{ width: '100%' }} />
 		</React.StrictMode>
 	</Provider>,
 	document.getElementById('root')

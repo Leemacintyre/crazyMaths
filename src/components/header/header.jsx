@@ -1,11 +1,9 @@
 import React from 'react';
 import styles from './header.style.module.scss';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useState } from 'react';
 
 export const Header = () => {
-	const dispatch = useDispatch();
-
 	const counter = useSelector((state) => state.counter);
 	const [timeKeeper, setTimeKeeper] = useState(5);
 

@@ -1,23 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './typeOfEquation.style.module.scss';
-import { useSelector, useDispatch } from 'react-redux';
-import { randomNum1, isCorrect, isIncorrect, counter } from '../../actions';
-
+import { Link } from 'react-router-dom';
 export const TypeOfEquation = () => {
-	const dispatch = useDispatch();
-
-	// const addition = (event) => {
-	// 	const total = num1 + num2;
-	// 	const strTotal = total.toString();
-	// };
-
 	return (
 		<div className={styles.container}>
 			<div className={styles.titles}>
-				<p>ADDITION</p>
-				<p>SUBTRACTION</p>
-				<p>MULTIPLICATION</p>
-				<p>DIVISION</p>
+				<Link to='/addition'>ADDITION</Link>
+				<Link to='/subtraction'>SUBTRACTION</Link>
+				<Link to='/multiplication'>MULTIPLICATION</Link>
+				<Link to='/division'>DIVISION</Link>
 			</div>
 		</div>
 	);
