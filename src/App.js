@@ -1,25 +1,23 @@
-import logo from './logo.svg';
+import React from 'react';
+// import { useSelector, useDispatch } from 'react-redux';
+import { Header } from './components/header/header';
+import { TypeOfEquation } from './components/typeOfEquation/typeOfEquation';
+import { Calculation } from './components/calculations/calculation';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+	// const dispatch = useDispatch();
+
+	// const count = useSelector((state) => state.counter);
+
+	return (
+		<div>
+			<Header />
+			<TypeOfEquation />
+			<Calculation />
+		</div>
+	);
+};
 
 export default App;

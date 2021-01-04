@@ -1,0 +1,44 @@
+.container {
+	//border: 1px solid black;
+	width: 100vw;
+	height: 80vh;
+	padding-top: 5%;
+	font-size: 24vw;
+	font-weight: 700;
+	display: flex;
+	flex-flow: wrap;
+	justify-content: space-around;
+	background-color: none;
+	margin-right: 2%;
+
+	.equation {
+		//border: 1px solid black;
+		height: 40vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.inputContainer {
+		display: flex;
+		flex-flow: wrap;
+		justify-content: center;
+		align-items: center;
+		height: 5vh;
+		width: 80vw;
+		background-color: none;
+
+		input {
+			display: flex;
+			height: 5vh;
+			width: 80vw;
+			border: none;
+			border-radius: 5px;
+			box-shadow: 2px 1px #000000;
+		}
+		p {
+			font-size: 0.1em;
+			width: 100%;
+		}
+	}
+}

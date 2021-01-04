@@ -1,0 +1,18 @@
+.container {
+	width: 100vw;
+	background-color: grey;
+	font-size: 3em;
+	font-weight: 700;
+
+	.titles {
+		margin: auto;
+		width: 90vw;
+		display: flex;
+		justify-content: space-between;
+
+		:hover {
+			transition: all 0.1s;
+			transform: scale(1.1);
+		}
+	}
+}

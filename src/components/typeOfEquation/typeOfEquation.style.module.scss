@@ -1,0 +1,17 @@
+.container {
+	background-color: greenyellow;
+	margin: 0;
+
+	.titles {
+		width: 90vw;
+		margin: auto;
+		display: flex;
+		justify-content: space-between;
+		font-size: 1.6em;
+
+		:hover {
+			transition: all 0.1s;
+			transform: scale(1.1);
+		}
+	}
+}

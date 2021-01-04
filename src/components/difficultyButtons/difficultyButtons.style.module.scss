@@ -1,0 +1,46 @@
+.difficulty {
+	//border: 1px solid black;
+	height: 40vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	margin-right: 2%;
+
+	.buttonEasy {
+		text-decoration: none;
+		border: none;
+		background-color: green;
+		opacity: 0.85;
+		border-radius: 5px;
+		font-size: 0.25em;
+		box-sizing: border-box;
+		box-shadow: 2px 1px #000000;
+	}
+
+	.buttonMedium {
+		text-decoration: none;
+		border: none;
+		background-color: darkorange;
+		opacity: 0.85;
+		border-radius: 5px;
+		font-size: 0.25em;
+		box-sizing: border-box;
+		box-shadow: 2px 1px #000000;
+	}
+	.buttonHard {
+		text-decoration: none;
+		border: none;
+		background-color: red;
+		opacity: 0.85;
+		border-radius: 5px;
+		font-size: 0.25em;
+		box-sizing: border-box;
+		box-shadow: 2px 1px #000000;
+	}
+	:hover {
+		transition: all 0.1s;
+		opacity: 1;
+		box-shadow: 0px 0px #000000;
+		cursor: pointer;
+	}
+}
