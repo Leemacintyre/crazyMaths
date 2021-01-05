@@ -11,35 +11,33 @@ import {
 import DifficultyButtons from '../difficultyButtons/difficultyButtons';
 
 export const Calculation = () => {
-	const dispatch = useDispatch();
-	const num1 = useSelector((state) => state.randomNum1.num1);
-	const num2 = useSelector((state) => state.randomNum1.num2);
-	const difficultyLevel = useSelector((state) => state.difficulty);
-	const answerState = useSelector((state) => state.isCorrect);
-	const stateInputValue = useSelector((state) => state.inputValue);
+	// const num1 = useSelector((state) => state.randomNum1.num1);
+	// const num2 = useSelector((state) => state.randomNum1.num2);
+	// const difficultyLevel = useSelector((state) => state.difficulty);
+	// const answerState = useSelector((state) => state.isCorrect);
+	// const stateInputValue = useSelector((state) => state.inputValue);
 
-	const checkAnswer = () => {
-		const total = num1 + num2;
-		const strTotal = total.toString();
-		console.log(difficultyLevel);
+	// const checkAnswer = () => {
+	// 	const total = num1 + num2;
+	// 	const strTotal = total.toString();
+	// 	console.log(difficultyLevel);
 
-		if (stateInputValue === strTotal) {
-			dispatch(randomNum1(difficultyLevel));
-			dispatch(isCorrect());
-			dispatch(counter());
-			dispatch(inputValue(''));
-		} else if (stateInputValue.length > 0) {
-			dispatch(isIncorrect());
-		}
-	};
+	// 	if (stateInputValue === strTotal) {
+	// 		dispatch(randomNum1(difficultyLevel));
+	// 		dispatch(isCorrect());
+	// 		dispatch(counter());
+	// 		dispatch(inputValue(''));
+	// 	} else if (stateInputValue.length > 0) {
+	// 		dispatch(isIncorrect());
+	// 	}
+	// };
 
-	useEffect(() => {
-		checkAnswer();
-	});
-
+	// useEffect(() => {
+	// 	checkAnswer();
+	// });
 	return (
 		<div className={styles.container}>
-			<div className={styles.equation}>
+			{/* <div className={styles.equation}>
 				<p onClick={() => dispatch(randomNum1(difficultyLevel))}>{num1}</p>
 				<p>+</p>
 				<p>{num2}</p>
@@ -55,7 +53,7 @@ export const Calculation = () => {
 						dispatch(inputValue(event.target.value));
 					}}
 				/>
-			</div>
+			</div> */}
 		</div>
 	);
 };

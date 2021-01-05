@@ -48,3 +48,12 @@ export const difficulty = (difficulty) => {
 		payload: difficulty,
 	};
 };
+
+///////////////////////////////////////
+
+export const timeHolder = (time) => {
+	return {
+		type: 'TIME_HOLDER',
+		payload: time,
+	};
+};
