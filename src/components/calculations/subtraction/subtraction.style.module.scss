@@ -28,6 +28,26 @@
 		width: 80vw;
 		background-color: none;
 
+		.descriptionOfContent {
+			border: 0px solid black;
+			width: 80vw;
+			display: flex;
+
+			.difficultyLevel {
+				display: flex;
+				justify-content: flex-end;
+			}
+
+			p {
+				display: flex;
+				justify-content: flex-start;
+				font-size: 0.1em;
+				width: 100%;
+				margin: auto;
+				padding-top: 5%;
+			}
+		}
+
 		input {
 			display: flex;
 			height: 5vh;
@@ -35,10 +55,6 @@
 			border: none;
 			border-radius: 5px;
 			box-shadow: 2px 1px #000000;
-		}
-		p {
-			font-size: 0.1em;
-			width: 100%;
 		}
 	}
 }

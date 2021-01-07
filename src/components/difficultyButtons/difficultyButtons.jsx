@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './difficultyButtons.style.module.scss';
-import { difficulty } from '../../actions';
+import { difficulty, showDifficultyLevel } from '../../actions';
 import { useDispatch } from 'react-redux';
 
 const DifficultyButtons = () => {
@@ -12,18 +12,25 @@ const DifficultyButtons = () => {
 				type='button'
 				onClick={() => {
 					dispatch(difficulty(10));
+					dispatch(showDifficultyLevel('Easy'));
 				}}
 				className={styles.buttonEasy}>
 				Easy
 			</button>
 
 			<button
-				onClick={() => dispatch(difficulty(20))}
+				onClick={() => {
+					dispatch(difficulty(20));
+					dispatch(showDifficultyLevel('Medium'));
+				}}
 				className={styles.buttonMedium}>
 				Medium
 			</button>
 			<button
-				onClick={() => dispatch(difficulty(30))}
+				onClick={() => {
+					dispatch(difficulty(30));
+					dispatch(showDifficultyLevel('Hard'));
+				}}
 				className={styles.buttonHard}>
 				Hard
 			</button>

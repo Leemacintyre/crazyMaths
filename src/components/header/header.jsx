@@ -14,43 +14,24 @@ export const Header = () => {
 	const dispatch = useDispatch();
 	dispatch(timeHolder(timer));
 
-	const toggleDisabled = () => {
-		setButtonDisabled(true);
-		setTimeout(() => setButtonDisabled(false), 5000);
-	};
+	useEffect(() => {
+		const myTimer = timer > 0 && setInterval(() => setTimer(timer - 1), 1000);
+		return () => clearInterval(myTimer);
+	}, [timer]);
 
-	const time = () => {
-		setTimeout(() => {
-			setTimer(timer + 1);
-		}, 1000);
-	};
+	console.log(timer);
 
 	const start = () => {
-		if (timer >= 5) {
-			clearTimeout(time);
-		} else {
-			clearTimeout(time);
-
-			time();
-		}
-	};
-
-	const display = () => {
-		clearTimeout(time);
-		setShowStart(!showStart);
-		setTimer(0);
-		clearTimeout(time);
-		toggleDisabled();
+		setTimer(200);
 	};
 
 	return (
 		<div className={styles.container}>
 			<div className={styles.titles}>
 				<p>CRAZY MATHS</p>
-				{start()}
-				<p>{!buttonDisabled ? 'start' : `TIMER : ${timer}`}</p>
+				<p>{timer}</p>
 				<p>SCORE : {counter} </p>
-				<button disabled={buttonDisabled} onClick={display}>
+				<button disabled={timer > 0 ? true : false} onClick={start}>
 					GO
 				</button>
 			</div>

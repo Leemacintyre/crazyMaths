@@ -51,6 +51,15 @@ export const difficulty = (difficulty) => {
 
 ///////////////////////////////////////
 
+export const showDifficultyLevel = (difficultyLevel) => {
+	return {
+		type: 'SHOW_DIFFICULTY_LEVEL',
+		payload: difficultyLevel,
+	};
+};
+
+///////////////////////////////////////
+
 export const timeHolder = (time) => {
 	return {
 		type: 'TIME_HOLDER',
