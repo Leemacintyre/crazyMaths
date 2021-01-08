@@ -1,7 +1,7 @@
-export const counter = () => {
+export const counter = (x) => {
 	return {
 		type: 'INCREMENT',
-		payload: 1,
+		payload: x,
 	};
 };
 ///////////////////////////////////////

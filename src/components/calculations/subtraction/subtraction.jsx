@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Fragment } from 'react';
 import styles from './subtraction.style.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import {
@@ -19,6 +19,8 @@ export const Subtraction = () => {
 	const answerState = useSelector((state) => state.isCorrect);
 	const showDifficultyLevel = useSelector((state) => state.showDifficultyLevel);
 	const stateInputValue = useSelector((state) => state.inputValue);
+	const DisplayCounter = useSelector((state) => state.counter);
+	const timeHolder = useSelector((state) => state.timeHolder);
 
 	const checkAnswer = () => {
 		const total = num1 - num2;
@@ -27,7 +29,7 @@ export const Subtraction = () => {
 		if (stateInputValue === strTotal) {
 			dispatch(randomNum1(difficultyLevel));
 			dispatch(isCorrect());
-			dispatch(counter());
+			dispatch(counter(1));
 			dispatch(inputValue(''));
 		} else if (stateInputValue.length > 0) {
 			dispatch(isIncorrect());
@@ -38,27 +40,37 @@ export const Subtraction = () => {
 		checkAnswer();
 	});
 	return (
-		<div className={styles.container}>
-			<div className={styles.equation}>
-				<p onClick={() => dispatch(randomNum1(difficultyLevel))}>{num1}</p>
-				<p> - </p>
-				<p>{num2}</p>
-			</div>
-			<DifficultyButtons />
-			<div className={styles.inputContainer}>
-				<div className={styles.descriptionOfContent}>
-					<p>{answerState ? 'Correct' : 'Incorrect'}</p>
-					<p className={styles.difficultyLevel}>
-						Difficulty: {showDifficultyLevel}
-					</p>
+		<Fragment>
+			{timeHolder ? (
+				<div className={styles.container}>
+					<div className={styles.equation}>
+						<p onClick={() => dispatch(randomNum1(difficultyLevel))}>{num1}</p>
+						<p> - </p>
+						<p>{num2}</p>
+					</div>
+					<DifficultyButtons />
+					<div className={styles.inputContainer}>
+						<div className={styles.descriptionOfContent}>
+							<p>{answerState ? 'Correct' : 'Incorrect'}</p>
+							<p className={styles.difficultyLevel}>
+								Difficulty: {showDifficultyLevel}
+							</p>
+						</div>
+						<UserInputField
+							onChange={(event) => {
+								checkAnswer();
+								dispatch(inputValue(event.target.value));
+							}}
+						/>
+					</div>
 				</div>
-				<UserInputField
-					onChange={(event) => {
-						checkAnswer();
-						dispatch(inputValue(event.target.value));
-					}}
-				/>
-			</div>
-		</div>
+			) : (
+				<div className={styles.playAgain}>
+					{DisplayCounter
+						? `Your score was ${DisplayCounter} please play again`
+						: 'Press "GO" to play'}
+				</div>
+			)}
+		</Fragment>
 	);
 };

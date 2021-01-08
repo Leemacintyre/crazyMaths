@@ -2,14 +2,12 @@ import React from 'react';
 import styles from './header.style.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
-import { timeHolder } from '../../actions';
+import { timeHolder, counter } from '../../actions';
 
 export const Header = () => {
-	const counter = useSelector((state) => state.counter);
+	const DisplayCounter = useSelector((state) => state.counter);
 
 	const [timer, setTimer] = useState(0); //set timer here
-	const [showStart, setShowStart] = useState(false);
-	const [buttonDisabled, setButtonDisabled] = useState(false);
 
 	const dispatch = useDispatch();
 	dispatch(timeHolder(timer));
@@ -19,10 +17,9 @@ export const Header = () => {
 		return () => clearInterval(myTimer);
 	}, [timer]);
 
-	console.log(timer);
-
 	const start = () => {
-		setTimer(200);
+		setTimer(60);
+		dispatch(counter(0));
 	};
 
 	return (
@@ -30,7 +27,7 @@ export const Header = () => {
 			<div className={styles.titles}>
 				<p>CRAZY MATHS</p>
 				<p>{timer}</p>
-				<p>SCORE : {counter} </p>
+				<p>SCORE : {DisplayCounter} </p>
 				<button disabled={timer > 0 ? true : false} onClick={start}>
 					GO
 				</button>
