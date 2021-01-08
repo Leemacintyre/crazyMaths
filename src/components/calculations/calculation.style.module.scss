@@ -1,20 +1,28 @@
 .container {
+	// border: 1px solid black;
 	width: 100vw;
 	height: 50vh;
-	padding-top: 5%;
 	font-size: 24vw;
 	font-weight: 700;
 	display: flex;
 	flex-flow: wrap;
 	justify-content: space-around;
 	background-color: none;
-	margin-right: 2%;
+	margin-top: 2%;
 
 	.equation {
-		height: 40vh;
+		// border: 1px solid black;
+		height: 35vh;
+		font-size: 0.6em;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		margin-top: 0;
+	}
+
+	.numbers {
+		padding: 0;
+		margin: 0;
 	}
 
 	.inputContainer {
@@ -26,6 +34,25 @@
 		width: 80vw;
 		background-color: none;
 
+		.descriptionOfContent {
+			width: 80vw;
+			display: flex;
+
+			.difficultyLevel {
+				display: flex;
+				justify-content: flex-end;
+			}
+
+			p {
+				display: flex;
+				justify-content: flex-start;
+				font-size: 0.1em;
+				width: 100%;
+				margin: auto;
+				padding-top: 5%;
+			}
+		}
+
 		input {
 			display: flex;
 			height: 5vh;
@@ -34,9 +61,14 @@
 			border-radius: 5px;
 			box-shadow: 2px 1px #000000;
 		}
-		p {
-			font-size: 0.1em;
-			width: 100%;
-		}
 	}
+}
+.playAgain {
+	display: flex;
+	color: black;
+	height: 50vh;
+	align-items: center;
+	justify-content: center;
+	padding: 0 10%;
+	font-size: 5em;
 }

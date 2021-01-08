@@ -12,9 +12,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 
 const App = () => {
-	// const dispatch = useDispatch();
-	// const count = useSelector((state) => state.counter);
-
 	return (
 		<Router>
 			<div>
